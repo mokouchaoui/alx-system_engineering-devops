@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in *.html
+do
+    if [[ ! -f ../$file ]] || [[ "$file" -nt "../$file" ]]
+    then
+        cp "$file" ..
+        echo "Copied $file to parent directory."
+    fi
+done
