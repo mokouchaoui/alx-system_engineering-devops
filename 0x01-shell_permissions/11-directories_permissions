@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d -exec chmod 711 {} +
+ls -l | sed '1d' | awk '/^d/{print $1" "$9}' | xargs chmod ugo+rx
