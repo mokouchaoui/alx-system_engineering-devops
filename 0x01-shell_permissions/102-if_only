@@ -1,5 +1,2 @@
 #!/bin/bash
-if [ $(whoami) = "guillaume" ]
-then
-	  chown betty hello
-fi
+if [ $(whoami) = "guillaume" ]; then chown betty hello; fi
