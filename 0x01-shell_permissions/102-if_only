@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CURRENT_USER=$(whoami)
+
+FILE_OWNER=$(stat -c "%U" hello)
+
+if [ "$FILE_OWNER" = "guillaume" ]; then
+    sudo chown betty hello
+fi
