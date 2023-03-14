@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l | sed '1d' | awk '/^d/{print $1" "$9}' | xargs chmod ugo+rx
+ls -l | sed '1d' | awk '/^d/{print $9}' | xargs -I {} chmod ugo+rx {}
