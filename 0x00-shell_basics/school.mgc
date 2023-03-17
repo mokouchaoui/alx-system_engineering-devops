@@ -1,0 +1,26 @@
+tring SCHOOL school data
+! :mime School
+file -C -m school.mgc
+file --mime-type -m school.mgc
+#!/bin/bash
+0 string SCHOOL School data
+! :mime School
+file -C -m school.mgc
+file --mime-type -m school.mgc
+#!/bin/bash
+0 string SCHOOL School data
+! :mime School
+chmod u+x school.mgc
+file -C -m school.mgc
+file --mime-type -m school.mgc
+'echo #!/bin/bash' >> school.mgc
+echo '#!/bin/bash' >> school.mgc
+echo '0 string SCHOOL School data' >> school.mgc
+echo '! :mime School' >> school.mgc
+chmod u+x school.mgc
+file -C -m school.mgc *
+file --mime-type -m school.mgc *
+#!/bin/bash
+0 string SCHOOL School data
+! :mime School
+
