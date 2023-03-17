@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/bin/bash
 set | grep -vE 'BASH_EXECUTION_STRING|BASH_LINENO|BASH_SOURCE|FUNCNAME|GROUPS|PWD|_.*|SHLVL|_$' | grep -v '^$'
