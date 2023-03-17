@@ -1,0 +1,2 @@
+#!/bin/bash
+set -o posix; set > /tmp/variables.txt; set +o posix; sed -n '/^FUNCTION/{:a;n;/^$/b;p;ba}' /proc/$$/status >> /tmp/variables.txt
