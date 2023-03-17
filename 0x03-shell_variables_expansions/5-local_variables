@@ -1,2 +1,2 @@
 #!/bin/bash
-set > output.txt && env >> output.txt && declare -F >> output.txt
+(set -o posix; set) | less
