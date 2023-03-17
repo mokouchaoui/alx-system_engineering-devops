@@ -1,0 +1,2 @@
+#!/bin/bash
+cat > 21-reverse | tail -1 21-reverse | rev
