@@ -1,0 +1,2 @@
+#!/bin/bash
+ls ./, ../, 103-commas, file0.c, file1.c
