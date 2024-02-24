@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-
-ssh -i ~/.ssh/school ubuntu@1c7bc07956d0.1ce72472.alx-cod.online
+#create a private key with the name school
+ssh -i ~/.ssh/school ubuntu@54.209.216.143
