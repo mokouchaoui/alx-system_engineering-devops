@@ -1,24 +1,34 @@
-# Setup New Ubuntu server with nginx
+# install & configure nginx server with puppet
 
-exec { 'update system':
-        command => '/usr/bin/apt-get update',
+$config = "server {
+	listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html;
+
+        location /redirect_me {
+                return 301 https://www.linkedin.com/in/zakaria-rdouane-190a93242/;
+        }
+}"
+
+package { 'nginx':  # install nginx server
+ensure	=> 'installed',
 }
 
-package { 'nginx':
-	ensure => 'installed',
-	require => Exec['update system']
+file { 'index.html':
+ensure	=> 'present',
+path	=> '/var/www/html/index.html',
+content	=> 'Hello World!',
+mode	=> '0644'
 }
 
-file {'/var/www/html/index.html':
-	content => 'Hello World!'
+file { 'server_config':
+ensure	=> 'present',
+path 	=> '/etc/nginx/sites-available/default',
+content => $config
 }
 
-exec {'redirect_me':
-	command => 'sed -i "24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
-	provider => 'shell'
-}
-
-service {'nginx':
-	ensure => running,
-	require => Package['nginx']
+exec { 'service nginx restart':
+path	=> ['/usr/sbin', '/usr/bin']
 }
