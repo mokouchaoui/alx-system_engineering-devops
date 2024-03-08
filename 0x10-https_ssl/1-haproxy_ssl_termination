@@ -36,8 +36,8 @@ defaults
 backend web-backend
         balance roundrobin
         option forwardfor
-        server 282756-web-01 54.210.98.167:80 check
-        server 282756-web-02 3.84.255.123:80 check
+        server 363079-web-01 54.209.216.143:80 check
+        server 363079-web-02 100.25.204.157:80 check
 
 frontend proxynode
         bind *:80
@@ -45,6 +45,6 @@ frontend proxynode
         default_backend web-backend
 
 frontend www-https
-    bind *:443 ssl crt /etc/letsencrypt/archive/www.zakariardouane.tech/www.zakariardouane.tech.pem
+    bind *:443 ssl crt /etc/letsencrypt/archive/www.mokouchaoui.tech/www.mokouchaoui.tech.pem
     reqadd X-Forwarded-Proto:\ https
     default_backend web-backend
