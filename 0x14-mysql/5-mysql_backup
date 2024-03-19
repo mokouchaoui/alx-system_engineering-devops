@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# generate MySQL backup.
+mysqldump -v --opt --events --routines --triggers --default-character-set=utf8 -u root -p"$1" --all-databases > backup.sql
+tar -czvf $(date +%d-%m-%Y).tar.gz backup.sql
