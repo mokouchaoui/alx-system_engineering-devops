@@ -1,0 +1,15 @@
+[Unit]
+Description=gunicorn.service - AirBnB clone by asalf-tadesse run with Gunicorn.
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
+ExecStart=gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app --error-logfile /tmp/airbnb-error.log
+Restart=always
+StandardOutput=append:/tmp/airbnb-access.log
+StandardOutput=append:/tmp/airbnb-error.log
+SyslogIdentifier=gunicorn
+[Install]
+WantedBy=multi-user.target
